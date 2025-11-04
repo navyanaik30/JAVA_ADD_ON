@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Notes - Notes Exchange</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="header-content">
+                <div class="brand">
+                    <i class="fas fa-book"></i>
+                    <h1>Notes Exchange</h1>
+                </div>
+                <nav class="nav">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="upload.html" class="nav-link active">Upload Notes</a>
+                    <a href="profile.html" class="nav-link">Profile</a>
+                    <a href="login.html" class="nav-link logout">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="upload-container">
+                <div class="upload-header">
+                    <h2>Upload New Notes</h2>
+                    <p>Share your study materials with the community</p>
+                </div>
+
+                <form id="uploadForm" class="upload-form">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-placeholder">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h3>Drop your files here or click to browse</h3>
+                            <p>Supported formats: PDF, DOC, DOCX, PPT, TXT (Max: 10MB)</p>
+                        </div>
+                        <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx,.ppt,.txt" style="display: none;">
+                    </div>
+
+                    <div class="selected-files" id="selectedFiles" style="display: none;">
+                        <h4>Selected Files:</h4>
+                        <div class="file-list" id="fileList"></div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label for="noteTitle">Note Title *</label>
+                            <input type="text" id="noteTitle" placeholder="Enter note title" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" required>
+                                <option value="">Select subject</option>
+                                <option value="mathematics">Mathematics</option>
+                                <option value="physics">Physics</option>
+                                <option value="chemistry">Chemistry</option>
+                                <option value="programming">Programming</option>
+                                <option value="database">Database Management</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="course">Course *</label>
+                            <input type="text" id="course" placeholder="e.g., B.Tech CSE" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="semester">Semester</label>
+                            <select id="semester">
+                                <option value="">Select semester</option>
+                                <option value="1">1st Semester</option>
+                                <option value="2">2nd Semester</option>
+                                <option value="3">3rd Semester</option>
+                                <option value="4">4th Semester</option>
+                                <option value="5">5th Semester</option>
+                                <option value="6">6th Semester</option>
+                                <option value="7">7th Semester</option>
+                                <option value="8">8th Semester</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="description">Description *</label>
+                        <textarea id="description" placeholder="Describe your notes, topics covered, and any important information..." rows="4" required></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="tags">Tags</label>
+                        <input type="text" id="tags" placeholder="Add tags separated by commas (e.g., algorithms, data-structures, java)">
+                        <small>Help others find your notes with relevant tags</small>
+                    </div>
+
+                    <div class="format-options">
+                        <label class="checkbox">
+                            <input type="checkbox" id="isDigital">
+                            <span>Digital Format</span>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" id="isPhysical">
+                            <span>Physical Copy Available</span>
+                        </label>
+                    </div>
+
+                    <div class="access-options">
+                        <label>Access Level:</label>
+                        <div class="radio-group">
+                            <label class="radio">
+                                <input type="radio" name="access" value="public" checked>
+                                <span>Public (Anyone can download)</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="access" value="department">
+                                <span>Department Only</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="access" value="private">
+                                <span>Private (Approval required)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-upload"></i>
+                            Upload Notes
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="resetForm">Reset Form</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="upload.js"></script>
+</body>
+</html>

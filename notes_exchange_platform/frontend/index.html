@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Exchange Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="header-content">
+                <div class="brand">
+                    <i class="fas fa-book"></i>
+                    <h1>Notes Exchange</h1>
+                </div>
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" id="globalSearch" placeholder="Search notes, subjects, or users...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-info">
+                            <img src="https://via.placeholder.com/40" alt="Profile" id="headerProfileImage">
+                            <span id="headerUserName">John Doe</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user"></i> My Profile
+                            </a>
+                            <a href="upload.html" class="dropdown-item">
+                                <i class="fas fa-upload"></i> Upload Notes
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-cog"></i> Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item logout">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <h2>Welcome back, <span id="mainUserName">John</span>! 👋</h2>
+                    <p>Ready to explore and share knowledge with your peers?</p>
+                    <div class="welcome-actions">
+                        <a href="upload.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-upload"></i> Upload New Notes
+                        </a>
+                        <button class="btn btn-secondary btn-large" id="quickSearchBtn">
+                            <i class="fas fa-search"></i> Quick Search
+                        </button>
+                    </div>
+                </div>
+                <div class="welcome-stats">
+                    <div class="stat-badge">
+                        <i class="fas fa-book-open"></i>
+                        <div>
+                            <span class="stat-number" id="welcomeTotalNotes">125</span>
+                            <span class="stat-label">Notes Available</span>
+                        </div>
+                    </div>
+                    <div class="stat-badge">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <span class="stat-number" id="welcomeActiveUsers">342</span>
+                            <span class="stat-label">Active Users</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Stats Grid -->
+            <section class="stats-section">
+                <div class="section-header">
+                    <h3>Your Activity</h3>
+                    <a href="profile.html" class="view-all">View Detailed Stats</a>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card primary">
+                        <div class="stat-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="myUploadsCount">15</h3>
+                            <p>Notes Shared</p>
+                            <span class="stat-trend positive">+2 this week</span>
+                        </div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="stat-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="myDownloadsCount">28</h3>
+                            <p>Notes Downloaded</p>
+                            <span class="stat-trend positive">+5 this week</span>
+                        </div>
+                    </div>
+                    <div class="stat-card warning">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="myRating">4.8</h3>
+                            <p>Average Rating</p>
+                            <span class="stat-trend">12 reviews</span>
+                        </div>
+                    </div>
+                    <div class="stat-card info">
+                        <div class="stat-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="myContributions">47</h3>
+                            <p>Total Contributions</p>
+                            <span class="stat-trend positive">+7% this month</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Content Grid -->
+            <div class="main-grid">
+                <!-- Recent Notes Section -->
+                <section class="content-section">
+                    <div class="section-header">
+                        <h3>Recent Notes</h3>
+                        <div class="section-actions">
+                            <a href="#" class="view-all">View All</a>
+                            <button class="btn-filter active" data-filter="all">All</button>
+                            <button class="btn-filter" data-filter="digital">Digital</button>
+                            <button class="btn-filter" data-filter="physical">Physical</button>
+                        </div>
+                    </div>
+                    <div class="notes-grid" id="recentNotesGrid">
+                        <!-- Notes will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Quick Actions -->
+                    <div class="sidebar-section">
+                        <h4>Quick Actions</h4>
+                        <div class="quick-actions">
+                            <a href="upload.html" class="quick-action">
+                                <i class="fas fa-upload"></i>
+                                <span>Upload Notes</span>
+                            </a>
+                            <a href="#" class="quick-action" id="askQuestionBtn">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Ask Question</span>
+                            </a>
+                            <a href="#" class="quick-action">
+                                <i class="fas fa-comments"></i>
+                                <span>Chat with Seniors</span>
+                            </a>
+                            <a href="#" class="quick-action">
+                                <i class="fas fa-bell"></i>
+                                <span>Notifications</span>
+                                <span class="badge">3</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Popular Subjects -->
+                    <div class="sidebar-section">
+                        <h4>Popular Subjects</h4>
+                        <div class="popular-subjects">
+                            <a href="#" class="subject-tag">
+                                <i class="fas fa-calculator"></i>
+                                Mathematics
+                                <span class="count">45</span>
+                            </a>
+                            <a href="#" class="subject-tag">
+                                <i class="fas fa-code"></i>
+                                Programming
+                                <span class="count">67</span>
+                            </a>
+                            <a href="#" class="subject-tag">
+                                <i class="fas fa-atom"></i>
+                                Physics
+                                <span class="count">32</span>
+                            </a>
+                            <a href="#" class="subject-tag">
+                                <i class="fas fa-flask"></i>
+                                Chemistry
+                                <span class="count">28</span>
+                            </a>
+                            <a href="#" class="subject-tag">
+                                <i class="fas fa-database"></i>
+                                DBMS
+                                <span class="count">23</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="sidebar-section">
+                        <h4>Recent Activity</h4>
+                        <div class="activity-feed">
+                            <div class="activity-item">
+                                <div class="activity-avatar">
+                                    <img src="https://via.placeholder.com/32" alt="User">
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>Sarah Johnson</strong> uploaded <em>Data Structures Notes</em></p>
+                                    <span class="activity-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-avatar">
+                                    <img src="https://via.placeholder.com/32" alt="User">
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>Mike Chen</strong> downloaded your <em>Java Programming Guide</em></p>
+                                    <span class="activity-time">5 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-avatar">
+                                    <img src="https://via.placeholder.com/32" alt="User">
+                                </div>
+                                <div class="activity-content">
+                                    <p><strong>Emily Davis</strong> rated your notes 5 stars</p>
+                                    <span class="activity-time">1 day ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Featured Notes Section -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h3>Featured Notes</h3>
+                    <a href="#" class="view-all">See More</a>
+                </div>
+                <div class="featured-notes" id="featuredNotes">
+                    <!-- Featured notes will be populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Ask Question Modal -->
+    <div class="modal" id="questionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Ask a Question</h3>
+                <button class="modal-close" id="closeQuestionModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="questionForm">
+                    <div class="input-group">
+                        <label for="questionTitle">Question Title</label>
+                        <input type="text" id="questionTitle" placeholder="What's your question?" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="questionSubject">Subject</label>
+                        <select id="questionSubject" required>
+                            <option value="">Select subject</option>
+                            <option value="mathematics">Mathematics</option>
+                            <option value="programming">Programming</option>
+                            <option value="physics">Physics</option>
+                            <option value="chemistry">Chemistry</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="questionDescription">Description</label>
+                        <textarea id="questionDescription" placeholder="Describe your question in detail..." rows="4" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Post Question</button>
+                        <button type="button" class="btn btn-secondary" id="cancelQuestion">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Notes Exchange</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-card">
+            <div class="logo">
+                <i class="fas fa-book"></i>
+                <h2>Join Notes Exchange</h2>
+            </div>
+            
+            <form id="signupForm" class="form">
+                <h3>Create Your Account</h3>
+                
+                <div class="name-group">
+                    <div class="input-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" placeholder="First name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" placeholder="Last name" required>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <i class="fas fa-envelope input-icon"></i>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create a password" required>
+                    <i class="fas fa-lock input-icon"></i>
+                </div>
+                
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                    <i class="fas fa-lock input-icon"></i>
+                </div>
+                
+                <div class="input-group">
+                    <label for="userType">I am a</label>
+                    <select id="userType" required>
+                        <option value="">Select role</option>
+                        <option value="student">Student</option>
+                        <option value="senior">Senior Student</option>
+                        <option value="faculty">Faculty</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="department">Department</label>
+                    <select id="department" required>
+                        <option value="">Select department</option>
+                        <option value="cse">Computer Science</option>
+                        <option value="ece">Electronics</option>
+                        <option value="mech">Mechanical</option>
+                        <option value="civil">Civil</option>
+                    </select>
+                </div>
+                
+                <div class="terms">
+                    <label class="checkbox">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Create Account</button>
+                
+                <p class="auth-link">
+                    Already have an account? <a href="login.html">Log in here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    
+    <script src="signup.js"></script>
+</body>
+</html>

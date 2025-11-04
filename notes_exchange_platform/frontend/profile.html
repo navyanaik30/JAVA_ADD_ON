@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Notes Exchange</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="header-content">
+                <div class="brand">
+                    <i class="fas fa-book"></i>
+                    <h1>Notes Exchange</h1>
+                </div>
+                <nav class="nav">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="upload.html" class="nav-link">Upload Notes</a>
+                    <a href="profile.html" class="nav-link active">Profile</a>
+                    <a href="login.html" class="nav-link logout">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img src="https://via.placeholder.com/120" alt="Profile" id="profileImage">
+                        <button class="edit-avatar-btn">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <div class="profile-info">
+                        <h2 id="userName">John Doe</h2>
+                        <p id="userRole">Senior Student</p>
+                        <p id="userDepartment">Computer Science Department</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-number" id="notesCount">15</span>
+                                <span class="stat-label">Notes Shared</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" id="downloadsCount">47</span>
+                                <span class="stat-label">Downloads</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" id="rating">4.8</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-content">
+                    <div class="profile-section">
+                        <h3>Personal Information</h3>
+                        <form id="profileForm" class="profile-form">
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="editFirstName">First Name</label>
+                                    <input type="text" id="editFirstName" value="John" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="editLastName">Last Name</label>
+                                    <input type="text" id="editLastName" value="Doe" required>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="editEmail">Email</label>
+                                <input type="email" id="editEmail" value="john.doe@example.com" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="editUserType">Role</label>
+                                    <select id="editUserType" required>
+                                        <option value="student">Student</option>
+                                        <option value="senior" selected>Senior Student</option>
+                                        <option value="faculty">Faculty</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label for="editDepartment">Department</label>
+                                    <select id="editDepartment" required>
+                                        <option value="cse" selected>Computer Science</option>
+                                        <option value="ece">Electronics</option>
+                                        <option value="mech">Mechanical</option>
+                                        <option value="civil">Civil</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="editBio">Bio</label>
+                                <textarea id="editBio" placeholder="Tell us about yourself..." rows="4">Passionate about sharing knowledge and helping juniors with their studies.</textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                <button type="button" class="btn btn-secondary" id="cancelEdit">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Change Password</h3>
+                        <form id="passwordForm" class="profile-form">
+                            <div class="input-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="confirmNewPassword">Confirm New Password</label>
+                                <input type="password" id="confirmNewPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Password</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

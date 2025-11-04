@@ -1,0 +1,15 @@
+com\notesexchange\config\SecurityConfig.class
+com\notesexchange\model\AccessLevel.class
+com\notesexchange\model\User.class
+com\notesexchange\model\UserType.class
+com\notesexchange\controller\UserController.class
+com\notesexchange\model\Note.class
+com\notesexchange\controller\AuthController.class
+com\notesexchange\dto\SignupRequest.class
+com\notesexchange\NotesExchangeApplication.class
+com\notesexchange\service\UserService.class
+com\notesexchange\dto\ApiResponse.class
+com\notesexchange\dto\LoginRequest.class
+com\notesexchange\repository\UserRepository.class
+com\notesexchange\service\AuthService.class
+com\notesexchange\repository\NoteRepository.class

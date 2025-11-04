@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Notes Exchange</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="header-content">
+                <div class="brand">
+                    <i class="fas fa-book"></i>
+                    <h1>Notes Exchange</h1>
+                </div>
+                <nav class="nav">
+                    <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                    <a href="upload.html" class="nav-link">Upload Notes</a>
+                    <a href="profile.html" class="nav-link">Profile</a>
+                    <a href="login.html" class="nav-link logout">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="dashboard-header">
+                <h2>Welcome back, <span id="userGreeting">John</span>!</h2>
+                <p>Discover and share academic resources with your peers</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalNotes">125</h3>
+                        <p>Total Notes Available</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="myUploads">15</h3>
+                        <p>My Uploads</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="myDownloads">28</h3>
+                        <p>My Downloads</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="activeUsers">342</h3>
+                        <p>Active Users</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="content-section">
+                    <div class="section-header">
+                        <h3>Recent Notes</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="notes-grid" id="recentNotes">
+                        <!-- Notes will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="section-header">
+                        <h3>Quick Actions</h3>
+                    </div>
+                    <div class="actions-grid">
+                        <a href="upload.html" class="action-card">
+                            <i class="fas fa-upload"></i>
+                            <span>Upload Notes</span>
+                        </a>
+                        <a href="#" class="action-card">
+                            <i class="fas fa-search"></i>
+                            <span>Search Notes</span>
+                        </a>
+                        <a href="#" class="action-card">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Ask Questions</span>
+                        </a>
+                        <a href="#" class="action-card">
+                            <i class="fas fa-comments"></i>
+                            <span>Chat with Seniors</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="section-header">
+                        <h3>Popular Subjects</h3>
+                    </div>
+                    <div class="subjects-grid">
+                        <div class="subject-card">
+                            <i class="fas fa-calculator"></i>
+                            <span>Mathematics</span>
+                            <small>45 notes</small>
+                        </div>
+                        <div class="subject-card">
+                            <i class="fas fa-atom"></i>
+                            <span>Physics</span>
+                            <small>32 notes</small>
+                        </div>
+                        <div class="subject-card">
+                            <i class="fas fa-flask"></i>
+                            <span>Chemistry</span>
+                            <small>28 notes</small>
+                        </div>
+                        <div class="subject-card">
+                            <i class="fas fa-code"></i>
+                            <span>Programming</span>
+                            <small>67 notes</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "email": "autotest@example.com",
+  "password": "Pass1234",
+  "firstName": "Auto",
+  "lastName": "Tester",
+  "userType": "STUDENT",
+  "department": "CSE"
+}
